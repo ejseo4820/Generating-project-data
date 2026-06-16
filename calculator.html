@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>등급 계산기</title>
+</head>
+<body>
+
+<h1>📊 등급 계산기</h1>
+
+<input type="number" id="score" placeholder="백분위 입력">
+
+<button onclick="calculate()">계산</button>
+
+<h2 id="result"></h2>
+
+<br>
+<a href="index.html">홈으로</a>
+
+<script>
+function calculate() {
+
+    const score = Number(document.getElementById("score").value);
+
+    let grade = "";
+
+    if (score <= 4) grade = "D";
+    else if (score <= 11) grade = "C-";
+    else if (score <= 23) grade = "C";
+    else if (score <= 40) grade = "B-";
+    else if (score <= 60) grade = "B";
+    else if (score <= 77) grade = "B+";
+    else if (score <= 89) grade = "A";
+    else if (score <= 96) grade = "A+";
+    else grade = "S";
+
+    document.getElementById("result").innerText =
+        "결과 : " + grade;
+}
+</script>
+
+</body>
+</html>
